@@ -13,7 +13,7 @@
             {{- if strings.HasPrefix $url "/" -}}{{- $url = $url | relLangURL -}}{{- end -}}
             <a class="nav item" href="{{- $url -}}" {{- if strings.HasPrefix $url "http" -}}target="_blank" {{- end -}}>{{- .title -}}</a>
         {{- end -}}
-        {{ if .cx }}
+        {{ if .google.cx }}
             <input placeholder="Google 站内搜索" id="search_input" style="width: 150px">
             <button onclick="search()">
                 <svg width="13" height="13" viewBox="0 0 13 13"><title>搜尋</title>

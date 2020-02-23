@@ -9,3 +9,6 @@
 {{- partial "syntax.html" . -}}
 {{- template "_internal/google_analytics_async.html" . -}}
 {{- partial "custom-js.html" . -}}
+{{- if  .Site.Params.google.adsense  -}}
+    {{- partial "google_auto_adsense.html" . -}}
+{{- end -}}
