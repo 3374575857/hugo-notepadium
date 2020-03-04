@@ -7,27 +7,24 @@
         {{- $end := 0 -}}
 
         {{if lt $paginator.TotalPages 5}}
-        {{- $begin = 0 -}}
+        {{- $begin = 1 -}}
         {{- $end = $paginator.TotalPages -}}
         {{else}}
-
         {{- $begin = sub .PageNumber 2 -}}
         {{- $end = add .PageNumber 2 -}}
-        {{if lt $begin 0}}
-        {{- $begin = 0 -}}
-        {{- $end = add $begin  5 -}}
+        {{if lt $begin 1}}
+        {{- $begin = 1 -}}
+        {{- $end = add $begin  4 -}}
         {{end}}
-        {{if gt $end $paginator.TotalPages }}
-        {{- $begin = sub $paginator.TotalPages 5 -}}
+        {{if lt $paginator.TotalPages $end }}
+        {{- $begin = sub $paginator.TotalPages 4 -}}
         {{- $end = $paginator.TotalPages -}}
         {{end}}
         {{end}}
-
-        {{if ne $begin 0}}
+        {{if ne $begin 1}}
         <li><a href="{{- $paginator.First.URL -}}">{{- $paginator.First.PageNumber -}}</a></li>
         {{end}}
         {{if $paginator.HasPrev}}
-
         <li><a href="{{- $paginator.Prev.URL -}}" class="previous_page">&laquo;</a></li>
         {{end}}
         {{- range $paginator.Pagers -}}
