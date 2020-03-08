@@ -1,0 +1,15 @@
+[edited]
+other = " • 更新於 %s"
+
+[readingTime]
+one = " • 預計閱讀時間 1 分鐘"
+other = " • 預計閱讀時間 {{ .Count }} 分鐘"
+
+[more]
+other = "全文"
+
+[Categories]
+other = "分類"
+
+[Tags]
+other = "標籤"

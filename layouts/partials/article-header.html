@@ -23,7 +23,7 @@
             {{- if .IsTranslated -}}
             <span class="langs">
                 {{- range .Translations -}}
-                <span class="lang"><a href="{{- .RelPermalink -}}">{{- .Lang -}}</a></span>
+                <span class="lang"><a href="{{- .RelPermalink -}}">{{- .Language.LanguageName -}}</a></span>
                 {{- end -}}
             </span>
             {{- end -}}
