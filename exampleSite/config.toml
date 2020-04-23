@@ -37,6 +37,11 @@ css = ["css/fonts.css"]
 [params.comments]
 enable = false  # En/Disable comments globally, default: false. You can always enable comments on per page.
 
+[params.share]
+enable = false  # En/Disable share globally, default: false. You can always enable share on per page.
+addThisId = ""
+inlineToolId = ""
+
 [params.math]
 enable = false # load math globally, default: false. You can always enable math on per page.
 use = "katex"  # builtin: "katex", "mathjax".  default: "katex"

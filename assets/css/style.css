@@ -4,10 +4,10 @@
 }
 
 html {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Microsoft YaHei', 'Segoe UI', 
-                Ubuntu, Roboto, Oxygen, Cantarell, 'Fira Sans', 'Droid Sans',
-                'Helvetica Neue', Helvetica, Arial, Verdana, 'Lucida Grande', 
-                sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Microsoft YaHei', 'Segoe UI',
+    Ubuntu, Roboto, Oxygen, Cantarell, 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', Helvetica, Arial, Verdana, 'Lucida Grande',
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
   font-size: 17px;
   font-weight: 400;
   line-height: 1.6;
@@ -15,12 +15,12 @@ html {
 
 body {
   display: block;
-  color: rgba(0,0,0,.85);
+  color: rgba(0, 32, 22, .75);
   background-color: #f9f9fd;
 
   word-break: normal;
   word-wrap: break-word;
-  
+
   hyphens: auto;
   -webkit-hyphens: auto;
   -ms-hyphens: auto;
@@ -142,6 +142,15 @@ th {
   padding: 0;
 }
 
+table thead {
+  color: #fff;
+  background-color: #5079b7;
+}
+
+table tr:nth-child(even) {
+  background-color: #f3f6fa;
+}
+
 a {
   color: #406599;
   text-decoration: none;
@@ -162,6 +171,11 @@ del {
 abbr,
 acronym {
   cursor: help;
+}
+
+strong,
+b {
+  color: rgba(0, 32, 22, .75);
 }
 
 .image-container,
@@ -249,7 +263,7 @@ acronym {
 }
 
 .site.name {
-  color: rgba(0,0,0,.85);
+  color: rgba(0, 32, 22, .75);
 }
 
 .site.slogan {
@@ -262,7 +276,7 @@ acronym {
 .site.slogan .title {
   display: inline-block;
   text-align: initial;
-  color: rgba(0,0,0,.5);
+  color: rgba(0, 32, 22, .5);
   min-height: 22px;
 }
 
@@ -277,7 +291,7 @@ acronym {
 
 .footer {
   font-size: 12px;
-  color: rgba(0,0,0,.5);
+  color: rgba(0, 32, 22, .5);
   margin-top: 30px;
   margin-bottom: 20px;
 }
@@ -326,7 +340,7 @@ acronym {
 }
 
 .note {
-  color: rgba(0,0,0,.85);
+  color: rgba(0, 32, 22, .75);
   display: block;
   text-decoration: none;
 }
@@ -342,7 +356,7 @@ acronym {
 }
 
 .note.date {
-  color: rgba(0,0,0,.5);
+  color: rgba(0, 32, 22, .5);
 }
 
 .note.content {
@@ -389,34 +403,39 @@ acronym {
 }
 
 .article.date {
-  color: rgba(0,0,0,.5);
+  color: rgba(0, 32, 22, .5);
   margin-top: 24px;
 }
 
 .tag,
 .category {
   display: inline-block;
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1;
-  padding: 4px 6px;
-  margin: 5px 5px 5px 0;
-  border-radius: 20px;
-  border: 1px solid #e6e6e6;
+  margin: 5px 8px 5px 0;
+}
+
+.tag::before {
+  content: "#";
+  opacity: .5;
 }
 
 .tag {
-  color: #c41a16;
+  color: #406599;
 }
 
 .category {
+  padding: 4px 6px;
+  border-radius: 3px;
   color: #fff;
-  background-color: #eb7350;
+  background-color: #5079b7;
 }
 
 .article.labels,
 .article.license,
 .article.navigation,
-.article.discussion {
+.article.discussion,
+.article.share {
   margin-top: 24px;
 }
 
@@ -445,8 +464,13 @@ acronym {
 }
 
 .article.license {
-  font-size: 15px;
-  text-align: center;
+  background-color: #f9f9f9;
+  border-radius: 3px;
+  margin: 30px 0;
+  font-size: 13px;
+  padding: 15px 20px;
+  border: 2px dashed #ddd;
+  color: #999;
 }
 
 .pagination {
@@ -485,17 +509,18 @@ acronym {
 
 .note.content,
 .article.markdown-body {
-  color: rgba(0,0,0,.65);
+  color: rgba(0, 0, 0, .65);
 }
 
 .note.list .item,
 .article-container {
   padding: 20px;
   border-radius: 6px;
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,.12);
+  box-shadow: 0 12px 16px 0 rgba(0, 32, 22, .12);
 }
 
 @media (max-width: 500px) {
+
   .note.list .item,
   .article-container {
     border-radius: 0;
@@ -515,7 +540,7 @@ acronym {
 
 .article.markdown-body {
   display: block;
-  
+
   margin-top: 20px;
   margin-bottom: 20px;
 }
@@ -526,7 +551,7 @@ acronym {
 .article.markdown-body h4,
 .article.markdown-body h5,
 .article.markdown-body h6 {
-  color: rgba(0,0,0,.8);
+  color: rgba(0, 32, 22, 0.75);
   margin-top: 24px;
   margin-bottom: 20px;
 }
@@ -716,6 +741,11 @@ acronym {
 }
 
 /* mathjax & katex patch */
+
+.article.markdown-body .katex-display {
+  display: inline-block;
+}
+
 .article.markdown-body .katex,
 .article.markdown-body .MathJax,
 .article.markdown-body .katex-display,

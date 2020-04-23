@@ -9,8 +9,8 @@
             <a class="nav item" href="{{- `/tags/` | relLangURL -}}">{{- T "Tags" -}}</a>
         {{- end -}}
         {{- range $nav.custom -}}
-            {{- $url := .url | safeURL -}}
-            {{- if strings.HasPrefix $url "/" -}}{{- $url = $url | relLangURL -}}{{- end -}}
+        {{- $url := (replace .url "#" "%23") | safeURL -}}
+        {{- if strings.HasPrefix $url "/" -}}{{- $url = $url | relLangURL -}}{{- end -}}
             <a class="nav item" href="{{- $url -}}" {{- if strings.HasPrefix $url "http" -}}target="_blank" {{- end -}}>{{- .title -}}</a>
         {{- end -}}
         {{ if .google.cx }}

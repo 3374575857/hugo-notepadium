@@ -1,6 +1,6 @@
 ![](https://raw.githubusercontent.com/cntrump/hugo-notepadium/master/images/screenshot.png)
 
-# hugo-notepadium ![](https://img.shields.io/badge/license-MIT-blue.svg) [![Netlify Status](https://api.netlify.com/api/v1/badges/2f389751-e070-437b-9dbd-3773bd57322e/deploy-status)](https://lvv.me)
+# Notepadium ![](https://img.shields.io/badge/license-MIT-blue.svg) [![Netlify Status](https://api.netlify.com/api/v1/badges/2f389751-e070-437b-9dbd-3773bd57322e/deploy-status)](https://lvv.me)
 
 Request Hugo Version: [0.60.0+](https://github.com/gohugoio/hugo/releases/)
 
@@ -22,6 +22,8 @@ Features
 - Custom header right items supporting
 - Builtin `plist` shortcode for API document
 - Custom article cover supporting
+- Article share supporting (thanks [@jianyuanzh](https://github.com/jianyuanzh))
+- [Twitter Card](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/summary) supporting
 
 Preview the exampleSite:
 
@@ -83,6 +85,11 @@ use = "none"  # builtin: "prismjs", "hljs". "none" means Chroma
 theme = "xcode"
 darkTheme = "xcode-dark"  # apply this theme in dark mode
 
+[params.share]
+enable = false
+addThisId = ""
+inlineToolId = ""
+
 [params.nav]
 showCategories = true       # /categories/
 showTags = true             # /tags/
@@ -134,7 +141,7 @@ url = "https://gohugo.io/"
 
 ```
 
-### Syntax highlighting:
+### Syntax highlighting
 
 ```toml
 # enable JS highlight
@@ -144,25 +151,20 @@ theme = "dracula"
 darkTheme = "xcode-dark"  # apply this theme in dark mode
 ```
 
+### Article share
+```toml
+[params.share]
+enable = true
+addThisId = "ra-1234567890"
+inlineToolId = ""
+```
+
 ### Math
 
 ```toml
 [params.math]
 enable = true  # true means globally, or on a per page set "math = true"
 use = "katex"  # "mathjax" or "katex"
-```
-
-Enable comments on per page:
-
-```md
-+++
-title = "..."
-date = 2019-12-08
-...
-math = true
-+++
-
-...
 ```
 
 Example
