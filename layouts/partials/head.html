@@ -4,6 +4,23 @@
 <meta name="color-scheme" content="light dark">
 <meta name="supported-color-schemes" content="light dark">
 
+{{- if .Params.Tags -}}
+<meta name="keywords" content="{{- range $index, $tag := .Params.Tags -}}{{- if $index -}},{{- end -}}{{- $tag -}}{{- end -}}">
+{{- else -}}
+<meta name="keywords" content="{{- range $index, $tag := .Site.Params.Keywords -}}{{- if $index -}},{{- end -}}{{- $tag -}}{{- end -}}">
+{{- end -}}
+
+{{- if .IsPage -}}
+
+{{- if .Description -}}
+<meta name="description" content="{{- .Description -}}">
+{{- else -}}
+<meta name="description" content="{{- .Summary -}}">
+{{- end -}}
+
+{{- else -}}
+<meta name="description" content="{{- .Site.Params.Description -}}">
+{{- end -}}
 {{- define "title" -}}
     {{- $title := .Title -}}
     {{- if and (ne $title "") (ne $title site.Title) -}}
