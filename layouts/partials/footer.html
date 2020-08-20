@@ -7,6 +7,10 @@
 </section>
 {{- partial "math.html" . -}}
 {{- partial "syntax.html" . -}}
+
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
 {{- template "_internal/google_analytics_async.html" . -}}
 {{- partial "custom-js.html" . -}}
 {{- if  .Site.Params.google.adsense  -}}
